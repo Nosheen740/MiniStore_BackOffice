@@ -45,12 +45,10 @@
             btnCancel = new Button();
             btnSave = new Button();
             flpProduct = new FlowLayoutPanel();
-            pnlProduct = new Panel();
             tlpProductForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nuPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nuStock).BeginInit();
             flpProduct.SuspendLayout();
-            pnlProduct.SuspendLayout();
             SuspendLayout();
             // 
             // tlpProductForm
@@ -215,12 +213,13 @@
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(391, 3);
+            btnCancel.Location = new Point(293, 3);
             btnCancel.Margin = new Padding(10, 3, 3, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(138, 37);
+            btnCancel.Size = new Size(114, 41);
             btnCancel.TabIndex = 0;
             btnCancel.Text = "Cancel";
+            btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
@@ -232,12 +231,12 @@
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(248, 1);
+            btnSave.Location = new Point(414, 3);
             btnSave.Margin = new Padding(4, 3, 4, 3);
             btnSave.Name = "btnSave";
             btnSave.Padding = new Padding(5, 0, 5, 0);
             btnSave.RightToLeft = RightToLeft.No;
-            btnSave.Size = new Size(129, 40);
+            btnSave.Size = new Size(117, 40);
             btnSave.TabIndex = 1;
             btnSave.Text = "Save";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -246,20 +245,13 @@
             // 
             // flpProduct
             // 
-            flpProduct.Controls.Add(pnlProduct);
+            flpProduct.Controls.Add(btnSave);
+            flpProduct.Controls.Add(btnCancel);
+            flpProduct.FlowDirection = FlowDirection.RightToLeft;
             flpProduct.Location = new Point(12, 268);
             flpProduct.Name = "flpProduct";
             flpProduct.Size = new Size(535, 49);
             flpProduct.TabIndex = 4;
-            // 
-            // pnlProduct
-            // 
-            pnlProduct.Controls.Add(btnCancel);
-            pnlProduct.Controls.Add(btnSave);
-            pnlProduct.Location = new Point(3, 3);
-            pnlProduct.Name = "pnlProduct";
-            pnlProduct.Size = new Size(532, 44);
-            pnlProduct.TabIndex = 0;
             // 
             // ProductForm
             // 
@@ -272,14 +264,13 @@
             Name = "ProductForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ProductForm";
-            Load += ProductForm_Load;
+            FormClosing += ProductForm_FormClosing;
             tlpProductForm.ResumeLayout(false);
             tlpProductForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nuPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)nuStock).EndInit();
             flpProduct.ResumeLayout(false);
-            pnlProduct.ResumeLayout(false);
-            pnlProduct.PerformLayout();
+            flpProduct.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -304,6 +295,5 @@
         private Button btnSave;
         private Button btnCancel;
         private FlowLayoutPanel flpProduct;
-        private Panel pnlProduct;
     }
 }
