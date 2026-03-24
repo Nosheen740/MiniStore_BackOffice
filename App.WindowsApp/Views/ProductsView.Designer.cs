@@ -221,7 +221,6 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(217, 23);
             txtSearch.TabIndex = 5;
-            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // cmbStockStatus
             // 
@@ -232,7 +231,6 @@
             cmbStockStatus.Name = "cmbStockStatus";
             cmbStockStatus.Size = new Size(162, 23);
             cmbStockStatus.TabIndex = 3;
-            cmbStockStatus.SelectedIndexChanged += cmbStockStatus_SelectedIndexChanged;
             // 
             // cmbCategory
             // 
@@ -243,7 +241,6 @@
             cmbCategory.Name = "cmbCategory";
             cmbCategory.Size = new Size(161, 23);
             cmbCategory.TabIndex = 4;
-            cmbCategory.SelectedIndexChanged += cmbCategory_SelectedIndexChanged;
             // 
             // lblSearch
             // 

@@ -20,29 +20,19 @@ namespace App.Core.Services
         }
         public Product Add(Product product)
         {
-
-            if (product != null)
-            {
-                product.Id = GenerateId();
-                _products.Add(product);
-            }
-
-            return product;
+            throw new NotImplementedException();
             //products.Add(product);
-
+            //return product;
         }
         
         public bool Delete(string id)
         {
-            Product prodToBeDeleted = GetById(id);
-            _products.Remove(prodToBeDeleted);
-            return true;
+            //return false;
+            throw new NotImplementedException();
         }
         public Product GetById(string id)
         {
-            Product? prod = _products.Find(p => p.Id == id);
-
-            return prod;
+            throw new NotImplementedException();
         }
         public List<Product> GetAll()
         {
@@ -50,42 +40,11 @@ namespace App.Core.Services
         }
         public List<Product> Search(string text, ProductsCategoryEnum? category, ProductStatusEnum? status)
         {
-            List<Product> _filtered = _products.ToList();
-            _filtered = _filtered.Where(p => p.Name.Contains(text)).ToList();
-
-            if (category is not null)
-            {
-                _filtered = _filtered.Where(p => p.Category == category).ToList();
-            }
-
-            if (status is not null)
-            {
-                _filtered = _filtered.Where(p => p.Status == status).ToList();
-            }
-
-            return _filtered;
+            throw new NotImplementedException();
         }
-
-
         public bool Update(Product product)
         {
-            if (product != null)
-            {
-                Product? exsisting = _products.Find(p => p.Id == product.Id);
-                if (exsisting == null) return false;
-
-                exsisting.Name = product.Name;
-                exsisting.Category = product.Category;
-                exsisting.Price = product.Price;
-                exsisting.Status = product.Status;
-                exsisting.Stock = product.Stock;
-
-                return true;
-
-
-            }
-
-            return false;
+            throw new NotImplementedException();
         }
         public void GenerateFakeProducts()
         {

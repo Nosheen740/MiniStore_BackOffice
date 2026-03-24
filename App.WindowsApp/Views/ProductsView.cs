@@ -58,43 +58,40 @@ namespace App.WindowsApp.Views
         private void ProductsView_Load(object sender, EventArgs e)
         {
             cmbCategory.Items.Clear();
-            var categories = new List<object> { "---ALL---" };
-            categories.AddRange(Enum.GetValues(typeof(ProductsCategoryEnum)).Cast<object>());
-            cmbCategory.DataSource = categories;
+            cmbCategory.Items.Add("--All--");
+            cmbCategory.Items.AddRange(Enum.GetNames(typeof(ProductsCategoryEnum)));
             cmbCategory.SelectedIndex = 0;
 
             cmbStockStatus.Items.Clear();
-            var StockStatus = new List<object> { "---ALL---" };
-            StockStatus.AddRange(Enum.GetValues(typeof(ProductStatusEnum)).Cast<object>());
-            cmbStockStatus.DataSource = StockStatus;
+            cmbStockStatus.Items.Add("--All--");
+            cmbStockStatus.Items.AddRange(Enum.GetNames(typeof(ProductStatusEnum)));
             cmbStockStatus.SelectedIndex = 0;
 
             if (_service == null)
                 return;
 
-            //_service.GetAll();
+            _service.GetAll();
             _dgvbindingSource.DataSource = _service.GetAll();
         }
 
         private void tsdAdd_Click(object sender, EventArgs e)
         {
-
-            ProductForm productForm = new ProductForm(ProductFormModeEnum.Add, null, _service);
+           
+            ProductForm productForm = new ProductForm(ProductFormModeEnum.Add, null );
             productForm.ShowDialog();
-            RefreshGrid();
 
         }
 
         private void tsdEdit_Click(object sender, EventArgs e)
         {
             Product? selectedProduct = _dgvbindingSource.Current as Product;
-            if (selectedProduct != null)
+            if(selectedProduct != null)
             {
-                ProductForm productForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct, _service);
+                ProductForm productForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct);
                 productForm.ShowDialog();
-                RefreshGrid();
-            }
 
+            }
+            
 
         }
 
@@ -103,67 +100,10 @@ namespace App.WindowsApp.Views
             Product? selectedProduct = _dgvbindingSource.Current as Product;
             if (selectedProduct != null)
             {
-                ProductForm productForm = new ProductForm(ProductFormModeEnum.View, selectedProduct, _service);
+                ProductForm productForm = new ProductForm(ProductFormModeEnum.View, selectedProduct);
                 productForm.ShowDialog();
 
             }
-        }
-
-        public void RefreshGrid()
-        {
-            string searchText = txtSearch.Text;
-
-            ProductsCategoryEnum? selectedCategory = null;
-            if (cmbCategory.SelectedItem != null)
-            {
-                if (cmbCategory.SelectedItem.ToString().Equals("---ALL---")) 
-                {
-                    selectedCategory = null;
-                }
-                else
-                {
-                    selectedCategory = (ProductsCategoryEnum)cmbCategory.SelectedItem;
-                }
-
-            }
-
-
-            ProductStatusEnum? selectedStatus = null;
-            if (cmbStockStatus.SelectedItem != null)
-            { 
-                if (cmbStockStatus.SelectedItem.ToString().Equals("---ALL---"))
-                {
-                    selectedStatus = null;
-                }
-                else
-                {
-                    selectedStatus = (ProductStatusEnum)cmbStockStatus.SelectedItem;
-                }
-
-            }
-
-
-
-            _dgvbindingSource.DataSource = _service.Search(searchText, selectedCategory, selectedStatus);
-
-            //_dgvbindingSource.DataSource = _service.GetAll();
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            RefreshGrid();
-        }
-
-        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshGrid();
-
-        }
-
-        private void cmbStockStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshGrid();
         }
     }
 }
