@@ -46,6 +46,7 @@
             pnlContent = new Panel();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            btnCutomer = new Button();
             pnlHeader.SuspendLayout();
             flpRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbUser).BeginInit();
@@ -115,6 +116,7 @@
             // 
             // flpNav
             // 
+            flpNav.Controls.Add(btnCutomer);
             flpNav.Controls.Add(btnSync);
             flpNav.Controls.Add(btnDashboard);
             flpNav.Controls.Add(btnSettings);
@@ -135,7 +137,7 @@
             btnSync.FlatStyle = FlatStyle.Flat;
             btnSync.Image = Properties.Resources.Sync;
             btnSync.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSync.Location = new Point(13, 208);
+            btnSync.Location = new Point(13, 246);
             btnSync.Margin = new Padding(4, 3, 4, 3);
             btnSync.Name = "btnSync";
             btnSync.Size = new Size(200, 40);
@@ -171,7 +173,7 @@
             btnSettings.FlatStyle = FlatStyle.Flat;
             btnSettings.Image = Properties.Resources.Setting;
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettings.Location = new Point(13, 254);
+            btnSettings.Location = new Point(13, 292);
             btnSettings.Margin = new Padding(4, 3, 4, 3);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(200, 40);
@@ -189,7 +191,7 @@
             btnLogs.FlatStyle = FlatStyle.Flat;
             btnLogs.Image = Properties.Resources.Logs;
             btnLogs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogs.Location = new Point(13, 300);
+            btnLogs.Location = new Point(13, 338);
             btnLogs.Margin = new Padding(4, 3, 4, 3);
             btnLogs.Name = "btnLogs";
             btnLogs.Size = new Size(200, 40);
@@ -225,7 +227,7 @@
             btnOrders.FlatStyle = FlatStyle.Flat;
             btnOrders.Image = Properties.Resources.Orders;
             btnOrders.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOrders.Location = new Point(13, 116);
+            btnOrders.Location = new Point(13, 154);
             btnOrders.Margin = new Padding(4, 3, 4, 3);
             btnOrders.Name = "btnOrders";
             btnOrders.Size = new Size(200, 40);
@@ -243,7 +245,7 @@
             btnReports.FlatStyle = FlatStyle.Flat;
             btnReports.Image = Properties.Resources.Report;
             btnReports.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReports.Location = new Point(13, 162);
+            btnReports.Location = new Point(13, 200);
             btnReports.Margin = new Padding(4, 3, 4, 3);
             btnReports.Name = "btnReports";
             btnReports.Size = new Size(200, 40);
@@ -277,6 +279,24 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(39, 17);
             toolStripStatusLabel1.Text = "Ready";
+            // 
+            // btnCutomer
+            // 
+            btnCutomer.BackColor = Color.Transparent;
+            btnCutomer.FlatAppearance.BorderSize = 0;
+            btnCutomer.FlatStyle = FlatStyle.Flat;
+            btnCutomer.Image = Properties.Resources.Customer;
+            btnCutomer.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCutomer.Location = new Point(13, 116);
+            btnCutomer.Margin = new Padding(4, 3, 4, 3);
+            btnCutomer.Name = "btnCutomer";
+            btnCutomer.Size = new Size(200, 40);
+            btnCutomer.TabIndex = 14;
+            btnCutomer.Text = "Customer";
+            btnCutomer.TextAlign = ContentAlignment.MiddleLeft;
+            btnCutomer.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCutomer.UseVisualStyleBackColor = false;
+            btnCutomer.Click += btnCutomer_Click;
             // 
             // MiniForm
             // 
@@ -325,5 +345,6 @@
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private Button btnCutomer;
     }
 }

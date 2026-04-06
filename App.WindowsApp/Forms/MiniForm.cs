@@ -16,9 +16,12 @@ namespace App.WindowsApp.Forms
 {
 
     public partial class MiniForm : Form
+
     {
-        private readonly Dictionary<Type, UserControl> _views = new Dictionary<Type, UserControl>();
         IProductService _productService = new InMemoryProductService();
+        InMemoryCustomerService _customerService = new InMemoryCustomerService();
+        private readonly Dictionary<Type, UserControl> _views = new Dictionary<Type, UserControl>();
+       
         public MiniForm()
         {
             InitializeComponent();
@@ -128,6 +131,12 @@ namespace App.WindowsApp.Forms
 
         private void MiniForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCutomer_Click(object sender, EventArgs e)
+        {
+            ShowView(() => new CustomerView(_customerService));
 
         }
     }

@@ -76,7 +76,7 @@ namespace App.WindowsApp.Views
             tblDashboard.RowStyles.Add(new RowStyle(SizeType.Absolute, 139F));
             tblDashboard.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tblDashboard.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblDashboard.Size = new Size(736, 406);
+            tblDashboard.Size = new Size(740, 405);
             tblDashboard.TabIndex = 0;
             tblDashboard.Paint += tableLayoutPanel1_Paint;
             // 
@@ -89,7 +89,7 @@ namespace App.WindowsApp.Views
             pnlRecentOrder.Location = new Point(4, 275);
             pnlRecentOrder.Margin = new Padding(4, 3, 4, 3);
             pnlRecentOrder.Name = "pnlRecentOrder";
-            pnlRecentOrder.Size = new Size(728, 128);
+            pnlRecentOrder.Size = new Size(732, 127);
             pnlRecentOrder.TabIndex = 2;
             pnlRecentOrder.Paint += pnlRecentOrder_Paint;
             // 
@@ -141,7 +141,7 @@ namespace App.WindowsApp.Views
             flpkpi.Location = new Point(4, 3);
             flpkpi.Margin = new Padding(4, 3, 4, 3);
             flpkpi.Name = "flpkpi";
-            flpkpi.Size = new Size(728, 133);
+            flpkpi.Size = new Size(732, 133);
             flpkpi.TabIndex = 0;
             // 
             // pnlSales
@@ -253,7 +253,7 @@ namespace App.WindowsApp.Views
             pnlLowStock.Location = new Point(4, 142);
             pnlLowStock.Margin = new Padding(4, 3, 4, 3);
             pnlLowStock.Name = "pnlLowStock";
-            pnlLowStock.Size = new Size(728, 127);
+            pnlLowStock.Size = new Size(732, 127);
             pnlLowStock.TabIndex = 1;
             // 
             // lblLowStock
@@ -293,7 +293,7 @@ namespace App.WindowsApp.Views
             Controls.Add(tblDashboard);
             Margin = new Padding(4, 3, 4, 3);
             Name = "DashboardView";
-            Size = new Size(736, 406);
+            Size = new Size(740, 405);
             tblDashboard.ResumeLayout(false);
             pnlRecentOrder.ResumeLayout(false);
             pnlRecentOrder.PerformLayout();
